@@ -1,0 +1,13 @@
+# The main pipeline for Practie
+resources:
+  pipelines:
+    Practie_pipeline:
+      name: Practie_pipeline
+      catalog: adb_practice
+      schema: Practie_${bundle.target}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: ${workspace.file_path}/src
